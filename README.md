@@ -1,2 +1,2 @@
-# WebConnectorBot
-WebConnector is a comprehensive and professional bot that connects and manages your website and Telegram channel seamlessly.
+# EventBot
+This is going to be a big and complete bot that can cover all the important airdrops in Telegram, its news and combos.
