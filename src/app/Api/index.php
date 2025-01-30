@@ -13,7 +13,6 @@ $telegramApi = new TelegramAPI;
 // //DB Instance
 $sql = new DB();
 
-// $airdrops = $sql->table('airdrops')->select(['id', 'persian_name', 'english_name'])->get();
 $user = $sql->table('users')->select()->where('user_id', $telegramApi->getUser_id())->first();
 $userStep = $user['step'];
 

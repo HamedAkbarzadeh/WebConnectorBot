@@ -8,7 +8,7 @@ function setManualLog($text, $file = "AllError.log")
 {
     date_default_timezone_set('Asia/Tehran');
 
-    $file = fopen('../Log/'.$file, 'a');
+    $file = fopen('../Log/' . $file, 'a');
     if ($file) {
         // fwrite($file, "[ ".jalaliDate(time() , "%A, %d %B %Y || %H:%i:%s")." ] - " . $text . PHP_EOL . PHP_EOL);
         fwrite($file, "[ " . date("Y-m-d H:i:s") . " ] - " . $text . PHP_EOL . PHP_EOL);
@@ -131,4 +131,24 @@ function returnToMenuAdmin($text, $sendEditMessage = false)
     } else {
         $telegramApi->sendMessage($text, $reply_markup);
     }
+}
+
+function inlineCancelButton()
+{
+    $reply_markup = [
+        'inline_keyboard' => [
+            [
+                [
+                    'text' => 'کنسل کردن',
+                    'callback_data' => 'cancel_proccess'
+                ]
+            ]
+        ]
+    ];
+}
+function setStep($step)
+{
+    global $sql;
+    global $telegramApi;
+    $sql->table('users')->where('user_id', $telegramApi->getUser_id())->update(['step'], [$step]);
 }

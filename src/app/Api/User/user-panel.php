@@ -57,3 +57,5 @@ if (strpos($telegramApi->getText(), '/start') === 0 || $telegramApi->getText() =
 
 include_once "../Admin/admin-panel.php";
 include_once "Links/link.php";
+include_once "AboutUs/about-us.php";
+include_once "ContactUs/contact-us.php";
