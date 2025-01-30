@@ -13,17 +13,17 @@ if (strpos($telegramApi->getText(), '/start') === 0 || $telegramApi->getText() =
         [
             [
                 'text' => 'ورود به کانال',
-                'callback_data' => 'link_to_join_telegram_channel',
+                'callback_data' => 'linkToJoin_telegramChannel',
             ],
             [
                 'text' => 'ورود به سایت',
-                'callback_data' => 'link_to_join_web_site',
+                'callback_data' => 'linkToJoin_webSite',
             ],
         ],
         [
             [
                 'text' => 'ورود به اینستاگرام',
-                'callback_data' => 'link_to_join_instagram',
+                'callback_data' => 'linkToJoin_instagram',
             ],
         ],
         [
@@ -56,3 +56,4 @@ if (strpos($telegramApi->getText(), '/start') === 0 || $telegramApi->getText() =
 }
 
 include_once "../Admin/admin-panel.php";
+include_once "Links/link.php";
